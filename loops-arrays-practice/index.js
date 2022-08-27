@@ -1,13 +1,13 @@
 var officeItems = ["stapler", "monitor", "computer", "desk", "lamp", "computer", "lamp", "stapler", "computer", "computer"]
 
 
-function countOcc(officeEquip) {
+let count = 0
 
-    for (i = 0; i < officeItems.length; i++) {
-        const comp = officeEquip.value
-        if (comp.value === "computer") {
-            console.log(officeEquip[i])
-        }
-    }
+officeItems.forEach(element => {
+  if (element === "computer") {
+    count += 1
+  }
+})
 
-}
+console.log(count)
+
