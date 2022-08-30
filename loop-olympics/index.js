@@ -86,16 +86,29 @@ const peopleArray = [
 //   console.log(peopleArray[i].name)
 
 // 2.
-var names = []
-var occupations = []
+// var names = []
+// var occupations = []
 
-for(var i = 0; i < peopleArray.length; i++){
-  names.push(peopleArray[i].name)
-  occupations.push(peopleArray[i].occupation)
-  console.log(names)
-  console.log(occupations)
-}
+// for(var i = 0; i < peopleArray.length; i++){
+//   names.push(peopleArray[i].name)
+//   occupations.push(peopleArray[i].occupation)
+//   console.log(names)
+//   console.log(occupations)
+// }
 
+// 3.
+// var names = []
+// var occupations = []
+
+// for(var i = 0; i < peopleArray.length; i+=2){
+//    names.push(peopleArray[i].name) 
+// }
+//   console.log(names)
+
+// for(var i = 1; i < peopleArray.length; i+=2) {
+//  occupations.push(peopleArray[i].occupation) 
+// }
+// console.log(occupations)
 
 
 // ["Harrison Ford", "Joe Biden"] // names
