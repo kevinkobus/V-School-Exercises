@@ -9,6 +9,3 @@ var alphabetArr = upperCaseAlpha.split("")
 
 for(var i = 1; i < people; i++)
 var addAlpha = people.splice([i], 0, alphabetArr)
-
-
-console.log(addAlpha)
