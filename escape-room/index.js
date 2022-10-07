@@ -3,15 +3,16 @@ const readline = require("readline-sync")
 //Intro to situation
 const name = readline.question("What is your name? ")
 console.log("Hi " + name + "! Your in a room and you want to get out")
+let go = readline.question("Are you ready? Type Y for yes, or N for no ")
 
-const start = readline.question("Are you ready? Y/N ")
-
-if (start === "y" || start === "Y") {
-    console.log("Lets Go!")
-}
-else {
-    console.log("Ok, but don't forget you're still in the room")
-    return start
+function start() {
+    if (go === "y" || go === "Y") {
+        console.log("Lets Go!")
+    }
+    else if (go === "n" || go === "N") {
+        console.log("Ok, but don't forget you're still in the room")
+        start()
+    }
 }
 
 //Room loop
@@ -19,13 +20,13 @@ let choice = readline.question("Here are your options: A. Stick your hand in the
 
 let count = 0
 
-const findKey = (function (choice) {
+const findKey = (function () {
     if (choice === "A" || choice === "a") {
         count++
         console.log("Bad choice! You've been sucked into a black hole. Try again.")
 
         choice = readline.question("Here are your options again: A. Stick your hand in the hole. B. Find the key. C. Open the door.")
-        findKey(choice)
+        findKey()
     }
     else if (choice === "B" || choice === "b") {
         count++
@@ -37,7 +38,7 @@ const findKey = (function (choice) {
         console.log("Bummer, it's locked! Try again")
 
         choice = readline.question("Here are your options again: A. Stick your hand in the hole. B. Find the key. C. Open the door. ")
-        findKey(choice)
+        findKey()
     }
 
     else {
@@ -45,7 +46,7 @@ const findKey = (function (choice) {
         console.log("Umm, not sure what that means, try again")
 
         choice = readline.question("Here are your options again: A. Stick your hand in the hole. B. Find the key. C. Open the door. ")
-        findKey(choice)
+        findKey()
     }
 
 })
@@ -71,3 +72,4 @@ const escapeRoom = function () {
     }
 
 }
+
