@@ -49,16 +49,25 @@ const findKey = (function (choice) {
     }
 
 })
+//Room loop after key
+const escapeRoom = function () {
+    let secondChoice = readline.question("Here are your remaining options: A. Stick your hand in the hole. B. Open the door. ")
+    if (secondChoice === "A" || secondChoice === "a") {
+        count++
+        console.log("Bad choice! You've been sucked into a black hole. Try again.")
+        escapeRoom()
 
-const escapeRoom = function() {
-let secondChoice = readline.question("Here are your remaining options: A. Stick your hand in the hole. B. Open the door. ")
-if (secondChoice === "A" || secondChoice === "a") {
-    count++
-    console.log("Bad choice! You've been sucked into a black hole. Try again.")
-    escapeRoom()
-    
-}
-
-
+    }
+    else if (secondChoice === "B" || secondChoice === "b") {
+        count++
+        console.log("Woohoo! You got out of the room.")
+        console.log(count)
+        return null
+    }
+    else {
+        count++
+        console.log("You're still stuck in the room, try again")
+        escapeRoom()
+    }
 
 }
